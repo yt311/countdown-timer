@@ -398,6 +398,7 @@ const CIRCUM = 1005.3;
 
 function getCtx() {
   if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+  if (audioCtx.state === 'suspended') audioCtx.resume();
   return audioCtx;
 }
 
@@ -461,6 +462,9 @@ function setPreset(m) {
 }
 
 function startTimer() {
+  // Init & unlock AudioContext on user gesture (required for iOS Safari)
+  if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+  audioCtx.resume();
   const m = parseInt(document.getElementById('inp-min').value) || 0;
   const s = parseInt(document.getElementById('inp-sec').value) || 0;
   totalSecs = m * 60 + s;
