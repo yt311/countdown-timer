@@ -1,4 +1,11 @@
 <!DOCTYPE html>
+<!--
+  Countdown Timer
+  Copyright (c) 2026 Yi-Ting Li. All Rights Reserved.
+  Unauthorized copying, modification, distribution, or use of this software,
+  via any medium, is strictly prohibited without the prior written permission
+  of the copyright holder.
+-->
 <html lang="zh-TW">
 <head>
 <meta charset="UTF-8">
@@ -178,7 +185,7 @@
   }
 
   .input-group label {
-    font-size: 11px;
+    font-size: 14px;
     color: var(--muted);
     letter-spacing: 0.1em;
     text-transform: uppercase;
@@ -286,11 +293,21 @@
 
   /* Section label */
   .section-label {
-    font-size: 11px;
+    font-size: 14px;
     letter-spacing: 0.14em;
     color: var(--muted);
     text-transform: uppercase;
     margin-bottom: -4px;
+  }
+  .footer {
+    position: fixed;
+    bottom: 1.2rem;
+    right: 1.5rem;
+    font-size: 14px;
+    color: rgba(200,201,205,0.75);
+    letter-spacing: 0.1em;
+    pointer-events: none;
+    user-select: none;
   }
 </style>
 </head>
@@ -535,5 +552,7 @@ function stopTimer() {
   document.getElementById('hint0').className = 'hint-row';
 }
 </script>
+<div class="footer">&copy; 2026 Yi-Ting Li &mdash; All Rights Reserved
+</div>
 </body>
 </html>
